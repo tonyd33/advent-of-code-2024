@@ -1,7 +1,7 @@
 const R = require('ramda')
 const {passthroughLog, loadFile} = require('../util')
 
-const input = './input1'
+const input = __dirname + '/input1'
 
 const takeAndSort = (m) => R.pipe(R.map(m), R.sort(R.subtract))
 

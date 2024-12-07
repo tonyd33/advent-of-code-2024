@@ -1,7 +1,7 @@
 const R = require('ramda')
 const {passthroughLog, loadFile} = require('../util')
 
-const input = './input1'
+const input = __dirname + '/input1'
 
 // [int] -> int -> int
 const count = rights => left => R.count(R.equals(left), rights)
@@ -15,7 +15,8 @@ R.pipe(
   R.map(line => line.replace(/\s+/, ' ').split(' ').map(v => +v)),
   // get occurrences
   // [[int, int]] -> [[int], [int]]
-  R.converge(R.unapply(R.identity), [R.map(R.head), R.map(R.last)]),
+  R.transpose,
+  passthroughLog,
   // [[int], [int]] -> [int]
   ([lefts, rights]) => lefts.map(R.converge(R.multiply, [count(rights), R.identity])),
   R.sum,
