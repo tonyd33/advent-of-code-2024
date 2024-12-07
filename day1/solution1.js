@@ -1,16 +1,13 @@
-const fs = require("fs");
-const R = require("ramda");
+const R = require('ramda')
+const {passthroughLog, loadFile} = require('../util')
 
-const passthroughLog = (x) => {
-  console.log(x);
-  return x;
-};
+const input = './input1'
 
 const takeAndSort = (m) => R.pipe(R.map(m), R.sort(R.subtract))
 
 R.pipe(
   // load input
-  R.partialRight(fs.readFileSync, ['utf8']),
+  loadFile,
   // sanitize
   R.split('\n'),
   R.filter(line => line.length > 0),
@@ -22,4 +19,4 @@ R.pipe(
   // sum
   R.sum,
   passthroughLog,
-)('./input1');
+)(input)
