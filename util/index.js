@@ -59,6 +59,16 @@ const branches = R.curryN(2, R.pipe(
 // after branching, converge the branches back
 const convergeWith = fn => arr => fn(arr)
 
+const assert = bool => {
+  if (!bool) throw new Error('Assertion failed')
+}
+const assertEq = (v1, v2) => {
+  if (!R.equals(v1, v2))
+    throw new Error(`Assertion failed.
+${JSON.stringify(v1, null, 2)} !== ${JSON.stringify(v2, null, 2)}
+`)
+}
+
 module.exports = {
   passthroughLog,
   stringifiedPassthroughLog,
@@ -67,5 +77,7 @@ module.exports = {
   aperture2d,
   branch,
   branches,
-  convergeWith
+  convergeWith,
+  assert,
+  assertEq
 };
