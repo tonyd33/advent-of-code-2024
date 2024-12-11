@@ -1,5 +1,5 @@
 const R = require('ramda')
-const {passthroughLog, loadFile, aperture2d, zipN} = require('../util')
+const {passthroughLog, loadFile, aperture2d} = require('../util')
 
 const input = __dirname + '/input1'
 

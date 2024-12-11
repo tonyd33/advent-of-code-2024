@@ -1,10 +1,7 @@
 const fs = require('fs')
 const R = require("ramda")
 
-const passthroughLog = x => {
-  console.log(x)
-  return x
-}
+const passthroughLog = R.tap(console.log)
 
 const stringifiedPassthroughLog = (...stringifyArgs) => x => R.pipe(
   R.partialRight(JSON.stringify, [...stringifyArgs]),
@@ -12,17 +9,6 @@ const stringifiedPassthroughLog = (...stringifyArgs) => x => R.pipe(
 )(x)
 
 const loadFile = R.partialRight(fs.readFileSync, ["utf8"])
-
-// like zip, but works for any number of arrays to zip.
-// e.g. [1, 2], [3, 4], [5, 6], [7, 8] -> [1, 3, 5, 7], [2, 4, 6, 8]
-// indices = [0, 1]
-const zipN = R.converge(
-  (indices, xss) => indices.map(idx => xss.map(xs => xs[idx])),
-  R.map(R.unapply, [
-    R.pipe(R.map(R.length), R.apply(Math.min), R.range(0)),
-    R.identity
-  ])
-)
 
 // like aperture, but works on a 2d array to create 2d windows
 const aperture2d = (rowSize, colSize) => R.pipe(
@@ -38,7 +24,7 @@ const aperture2d = (rowSize, colSize) => R.pipe(
     // the [[string]] entries are windows of the row.
     R.map(R.aperture(colSize)),
     // [[[string]]] -> [Grid]
-    R.apply(zipN),
+    R.transpose,
   )),
 )
 
@@ -73,7 +59,6 @@ module.exports = {
   passthroughLog,
   stringifiedPassthroughLog,
   loadFile,
-  zipN,
   aperture2d,
   branch,
   branches,
