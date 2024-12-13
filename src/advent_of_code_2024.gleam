@@ -4,6 +4,8 @@ import argv
 
 import day9/solution1 as day9_solution1
 import day9/solution2 as day9_solution2
+import day11/solution1 as day11_solution1
+import day11/solution2 as day11_solution2
 
 fn input_flag() -> glint.Flag(String) {
   glint.string_flag("input")
@@ -28,6 +30,8 @@ fn run() {
   case day, solution {
     "9", "1" -> day9_solution1.solution(input)
     "9", "2" -> day9_solution2.solution(input)
+    "11", "1" -> day11_solution1.solution(input)
+    "11", "2" -> day11_solution2.solution(input)
     _, _ -> panic as "Unknown day or solution"
   }
   |> io.debug
