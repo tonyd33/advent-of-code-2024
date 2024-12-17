@@ -9,6 +9,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "canvas": "^2.11.2",
     "ramda": "^0.30.1"
   }
 }
