@@ -45,6 +45,17 @@ const branches = R.curryN(2, R.pipe(
 // after branching, converge the branches back
 const convergeWith = fn => arr => fn(arr)
 
+const xprodN = (first, ...rest) => {
+  if (rest.length === 0) return first.map(x => [x])
+  if (rest.length === 1) return R.xprod(first, rest[0])
+  else {
+    return R.flow(
+      xprodN(...rest),
+      [R.xprod(first), R.flatten(), R.splitEvery(rest.length + 1)]
+    )
+  }
+}
+
 const assert = bool => {
   if (!bool) throw new Error('Assertion failed')
 }
@@ -63,6 +74,7 @@ module.exports = {
   branch,
   branches,
   convergeWith,
+  xprodN,
   assert,
   assertEq
 };
