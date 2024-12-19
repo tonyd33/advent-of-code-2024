@@ -3,3 +3,7 @@ node_modules/**
 *.beam
 *.ez
 erl_crash.dump
+.psci_modules/**
+.spago
+output/**
+.psc-ide-port
