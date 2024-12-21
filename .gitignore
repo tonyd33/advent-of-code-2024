@@ -7,3 +7,6 @@ erl_crash.dump
 .spago
 output/**
 .psc-ide-port
+# Added by cargo
+
+/target

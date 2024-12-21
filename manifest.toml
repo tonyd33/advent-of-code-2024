@@ -22,6 +22,7 @@ packages = [
   { name = "gzlib", version = "1.0.1", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "gzlib", source = "hex", outer_checksum = "5E71EF6C973CB61CDF25D1C5CDBD129C481CE432D6FD089FBB4E30B95CCCE935" },
   { name = "javascript_mutable_reference", version = "1.0.0", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "javascript_mutable_reference", source = "hex", outer_checksum = "3EE953EE7FE4FAFD17C16F24184F4C832FE260D761753F28F20D4AC1DA080F03" },
   { name = "pngleam", version = "1.1.0", build_tools = ["gleam"], requirements = ["gleam_stdlib", "gzlib"], otp_app = "pngleam", source = "hex", outer_checksum = "8D17F2C9C6D60BB0579B8744B5693D627276960ED8CF1C057BB33674CC669C97" },
+  { name = "pprint", version = "1.0.4", build_tools = ["gleam"], requirements = ["glam", "gleam_stdlib"], otp_app = "pprint", source = "hex", outer_checksum = "C310A98BDC0995644847C3C8702DE19656D6BCD638B2A8A358B97824379ECAA1" },
   { name = "rememo", version = "3.2.0", build_tools = ["gleam"], requirements = ["carpenter", "gleam_erlang", "gleam_javascript", "gleam_otp", "gleam_stdlib", "gtempo", "javascript_mutable_reference"], otp_app = "rememo", source = "hex", outer_checksum = "76E0BE2B8D0A8494042195435352070D369360B76F666F1AC0DB0BF2D77A2C5B" },
   { name = "simplifile", version = "2.2.0", build_tools = ["gleam"], requirements = ["filepath", "gleam_stdlib"], otp_app = "simplifile", source = "hex", outer_checksum = "0DFABEF7DC7A9E2FF4BB27B108034E60C81BEBFCB7AB816B9E7E18ED4503ACD8" },
   { name = "snag", version = "1.0.0", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "snag", source = "hex", outer_checksum = "08E9EB87C413457DB1DD66CD704C6878DACC9C93B418600F63873D0CD224E756" },
@@ -37,5 +38,6 @@ gleam_yielder = { version = ">= 1.1.0 and < 2.0.0" }
 gleeunit = { version = ">= 1.0.0 and < 2.0.0" }
 glint = { version = ">= 1.1.1 and < 2.0.0" }
 pngleam = { version = ">= 1.1.0 and < 2.0.0" }
+pprint = { version = ">= 1.0.4 and < 2.0.0" }
 rememo = { version = ">= 3.2.0 and < 4.0.0" }
 simplifile = { version = ">= 2.2.0 and < 3.0.0" }
