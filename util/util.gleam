@@ -23,6 +23,10 @@ pub fn sub_vec(v1: Vec2Int, v2: Vec2Int) {
   Vec2(v1.x - v2.x, v1.y - v2.y)
 }
 
+pub fn additive_inv_vec(v: Vec2Int) {
+  Vec2(-v.x, -v.y)
+}
+
 pub fn l1_distance(v1: Vec2Int, v2: Vec2Int) {
   int.absolute_value(v1.x - v2.x) + int.absolute_value(v1.y - v2.y)
 }
