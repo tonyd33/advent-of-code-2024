@@ -31,6 +31,13 @@ pub fn l1_distance(v1: Vec2Int, v2: Vec2Int) {
   int.absolute_value(v1.x - v2.x) + int.absolute_value(v1.y - v2.y)
 }
 
+pub fn result_expect(result: Result(a, b)) -> a {
+  case result {
+    Ok(a) -> a
+    _ -> panic
+  }
+}
+
 pub type VerboseGridCell(cell_type) {
   VerboseGridCell(pos: Vec2Int, cell: cell_type)
 }
