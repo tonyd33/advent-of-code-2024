@@ -30,6 +30,8 @@ import day23/solution1 as day23_solution1
 import day23/solution2 as day23_solution2
 import day24/solution1 as day24_solution1
 import day24/solution2 as day24_solution2
+import day25/solution1 as day25_solution1
+import day25/solution2 as day25_solution2
 
 fn input_flag() -> glint.Flag(String) {
   glint.string_flag("input")
@@ -80,6 +82,8 @@ fn run() {
     "23", "2" -> day23_solution2.solution(input)
     "24", "1" -> day24_solution1.solution(input)
     "24", "2" -> day24_solution2.solution(input)
+    "25", "1" -> day25_solution1.solution(input)
+    "25", "2" -> day25_solution2.solution(input)
     _, _ -> panic as "Unknown day or solution"
   }
   |> io.debug
